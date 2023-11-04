@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- question 2 -->
+    <!-- Fix the List by inserting the missing element using querySelectorAll -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+<script>
+    let listItems=document.querySelector('ul')
+    let items=listItems.querySelectorAll('li')
+    let indexThathas8=items[6]
+
+    let element7=document.createElement('li')
+    element7.innerHTML='7'
+    listItems.insertBefore(element7,indexThathas8)
+</script>
+</html>
