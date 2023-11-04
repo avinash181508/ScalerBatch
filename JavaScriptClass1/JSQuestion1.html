@@ -6,14 +6,14 @@
     <title><Document></title>
 </head>
 <body>
-    <button id="btn-1"></button>
+    <button id="btn-1">Button</button>
 </body>
 <script>
     let btn=document.querySelector('#btn-1')
     btn.addEventListener('click',function(){
         let divElement=document.createElement('div')
         divElement.innerText='Hello!'
-        let body=document.querySelector('div')
+        let body=document.querySelector('body')
         body.appendChild(divElement)
     })
 </script>
