@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding-top:5rem;
+        }
+        .movies{
+            height:10rem;
+            width:10rem;
+            margin:2rem;
+        }
+        .heading,
+        .price{
+            color:white;
+            text-align:center;
+            margin:0px;
+        }
+        .price{
+            background-color:blue;
+            height: 6rem;
+            padding: 1.5rem;
+            font-size: 2rem;
+        }
+        .heading{
+            background-color: red;
+            height: 2rem;
+            padding:0.4rem;
+        }
+        select,
+        h1{
+           position: fixed; 
+        }
+        h1{
+            top: 0px;
+        }
+        select{
+            width:8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book My Show</h1>
+    <select>
+        <option value="none">None</option>
+        <option value="action">Action</option>
+        <option value="romance">Romance</option>
+        <option value="comedy">Comedy</option>
+    </select>
+    <div class="movies">
+        <h3 class="heading">Gadar-2</h3>
+        <p class="price" data-category="action">Rs.200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Tiger-3</h3>
+        <p class="price" data-category="action">Rs.500</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">12th-FAIL</h3>
+        <p class="price" data-category="comedy">Rs.300</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Aankh Micholi</h3>
+        <p class="price" data-category="comedy">Rs.200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">LEO</h3>
+        <p class="price" data-category="action">Rs.250</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">DDLJ</h3>
+        <p class="price" data-category="romance">Rs.200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Kabir Singh</h3>
+        <p class="price" data-category="romance">Rs.200</p>
+    </div>
+    <div class="movies">
+        <h3 class="heading">Marvels</h3>
+        <p class="price" data-category="action">Rs.200</p>
+    </div>
+
+</body>
+<script>
+     let dropdown=document.querySelector('select')
+     dropdown.addEventListener('change',function(){
+         let filterValue=dropdown.value
+         let allTickets=document.querySelectorAll('.price')
+         if(filterValue=='none'){
+            for(let i=0;i<allTickets.length;i++){
+                allTickets[i].parentElement.style.display='block'
+            }
+        }else{
+            for(let i=0;i<allTickets.length;i++){
+                if(allTickets[i].getAttribute('data-category')!=filterValue){
+                    allTickets[i].parentElement.style.display='none'
+                }else{
+                    allTickets[i].parentElement.style.display='block'
+                }
+            }
+        }
+    })
+</script>
+</html>
